@@ -7,6 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
 // Define backend URL (replace if different)
 const BACKEND_URL = 'http://localhost:3001';
@@ -72,7 +73,9 @@ function App() {
           alignItems: 'center',
         }}
       >
-        <h1>AI Image Generator</h1>
+        <Typography variant="h3" component="h1" gutterBottom>
+          AI Image Generator
+        </Typography>
         
         <TextField 
           fullWidth 
@@ -90,7 +93,7 @@ function App() {
           disabled={!prompt || loading} // Disable if prompt empty or loading
           sx={{ marginTop: 2, marginBottom: 3 }}
         >
-          {loading ? <CircularProgress size={24} color="inherit" /> : 'Generate Image'}
+          {loading ? <CircularProgress size={24} color="primary" /> : 'Generate Image'}
         </Button>
 
         {/* Error Display */}      
